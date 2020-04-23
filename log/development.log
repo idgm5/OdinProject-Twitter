@@ -602,3 +602,124 @@ Migrating to DeviseCreateUsers (20200423172900)
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from block in execute at /home/isaac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281)
+Started GET "/users/sign_up" for ::1 at 2020-04-23 12:31:09 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 543)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 87.9ms | Allocations: 16599)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 157ms (Views: 134.6ms | ActiveRecord: 1.0ms | Allocations: 34530)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToUsers (20200423173957)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "username" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200423173957"]]
+  [1m[35m (92.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_up" for ::1 at 2020-04-23 12:45:30 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 6912)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 12592)
+
+
+
+NoMethodError - undefined method `name' for #<User id: nil, email: "", created_at: nil, updated_at: nil>:
+  app/views/devise/registrations/new.html.erb:14
+  app/views/devise/registrations/new.html.erb:9
+
+Started POST "/__better_errors/c9b8a4c7a3c157d4/variables" for ::1 at 2020-04-23 12:45:35 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/__better_errors/c9b8a4c7a3c157d4/variables" for ::1 at 2020-04-23 12:46:34 -0500
+Started GET "/users/sign_up" for ::1 at 2020-04-23 12:47:24 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 488)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 10329)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 18.5ms | ActiveRecord: 0.7ms | Allocations: 20747)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-04-23 12:56:18 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 463)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 10212)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 16301)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-04-23 12:56:21 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 201)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 130)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 302.6ms | Allocations: 9383)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 385ms (Views: 318.6ms | ActiveRecord: 0.0ms | Allocations: 15110)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-04-23 12:56:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 524)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 9122)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 15324)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-04-23 12:56:50 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 81)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 9713)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 14845)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-04-23 12:56:52 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 8352)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 12895)
+
+
+Started GET "/users/password/new" for ::1 at 2020-04-23 12:56:53 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3487)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 8689)
+
+
+Started GET "/users/password/new" for ::1 at 2020-04-23 12:57:07 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 513)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 10045)
+
+
