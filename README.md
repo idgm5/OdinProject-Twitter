@@ -1,24 +1,13 @@
-# README
+# OdinProject-Twitter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A basic twitter clone on rails, created by following [Andy Leverenz](https://www.youtube.com/watch?time_continue=1&v=5gUysPm64a4&feature=emb_logo) tutorials from Web Crunch on Youtube.
 
-Things you may want to cover:
+## How to start the app?
+- Clone this repository
+- Inside twitter directory run bundle
+- then rails server
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## What features includes?
+- User profiles with Gravatar
+- Account manager with Devise
+- Tweets Controller to update, delete and create new tweets
