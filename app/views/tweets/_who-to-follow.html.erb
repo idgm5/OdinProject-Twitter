@@ -1,57 +1,26 @@
 <div class="column">
 	<nav class="panel">
 		<p class="panel-heading">Who to Follow</p>
-
-	<div class="panel-block">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://pbs.twimg.com/profile_images/1197210754329595905/TqhuvA-c_400x400.jpg">
-				</figure>
+		<% @users.each do | user | %>
+			<div class="panel-block">
+				<article class="media">
+					<div class="media-left">
+						<figure class="image resize">
+							<%= gravatar_image_tag(user.email, size: 64, alt: user.name) %>
+						</figure>
+					</div>
+					<div class="media-content">
+						<div class="content">
+							<p>
+								<strong><%= user.name %></strong>
+								<br/>
+								<small>@<%= user.username %></small>
+							</p>
+						</div>
+					</div>
+				</article>
 			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>Isaac Gonzalez</strong>
-						<small>@idgm5</small>
-					</p>
-				</div>
-			</div>
-		</article>
+		<% end %>
 	</div>
-		<div class="panel-block">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://pbs.twimg.com/profile_images/1233560508185231361/KF2GGq5A_400x400.jpg">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>John Wick</strong>
-						<small>@johnwick</small>
-					</p>
-				</div>
-			</div>
-		</article>
-	</div>
-		<div class="panel-block">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://pbs.twimg.com/profile_images/1131183191094714368/nQlbknT3_400x400.png">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>Guillermo del Toro</strong>
-						<small>@RealGDT</small>
-					</p>
-				</div>
-			</div>
-		</article>
-	</div>
-	</nav>
+</nav>
 </div>
